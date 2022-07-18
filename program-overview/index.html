@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>銀河英雄伝説 (FC) 攻略&#x2F;解析 - プログラム概観</title>
+
+  <link rel="stylesheet" href="https://taotao54321.github.io/LoghResource/main.css">
+</head>
+<body>
+
+
+<header>
+  <a href="https://taotao54321.github.io/LoghResource/">銀河英雄伝説 (FC) 攻略&#x2F;解析</a>
+</header>
+
+<p>
+Published on: 2022-07-09
+
+</p>
+
+<h1>プログラム概観</h1>
+
+<p>本作は<a href="https://www.nesdev.org/wiki/MMC1">マッパー1</a>である。設定は以下の通り:</p>
+<ul>
+<li>ネームテーブルミラーリング: 可変</li>
+<li>PRG バンク切り替え: <code>$8000-$BFFF</code> 可変、<code>$C000-$FFFF</code> 固定</li>
+<li>CHR バンク切り替え: パターンテーブル <code>$0000-$0FFF</code>, <code>$1000-$1FFF</code> を個別に切り替える</li>
+</ul>
+<p>16KiB 単位の PRG バンクが 8 個存在する。論理ベースアドレスは以下の通り:</p>
+<table><thead><tr><th>PRG-ID</th><th>addr</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td><code>$8000</code></td></tr>
+<tr><td><code>1</code></td><td><code>$8000</code></td></tr>
+<tr><td><code>2</code></td><td><code>$8000</code></td></tr>
+<tr><td><code>3</code></td><td><code>$8000</code></td></tr>
+<tr><td><code>4</code></td><td><code>$8000</code></td></tr>
+<tr><td><code>5</code></td><td><code>$8000</code></td></tr>
+<tr><td><code>6</code></td><td><code>$8000</code></td></tr>
+<tr><td><code>7</code></td><td><code>$C000</code></td></tr>
+</tbody></table>
+<p>8KiB の WRAM を搭載している(バッテリーバックアップ機能なし)。論理アドレスは <code>$6000-$7FFF</code>。</p>
+
+
+
+</body>
+</html>

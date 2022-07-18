@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>銀河英雄伝説 (FC) 攻略&#x2F;解析 - 移動</title>
+
+  <link rel="stylesheet" href="https://taotao54321.github.io/LoghResource/main.css">
+</head>
+<body>
+
+
+<header>
+  <a href="https://taotao54321.github.io/LoghResource/">銀河英雄伝説 (FC) 攻略&#x2F;解析</a>
+</header>
+
+<p>
+Published on: 2022-07-18
+
+</p>
+
+<h1>移動</h1>
+
+<p>艦隊の移動処理は味方/敵共通。<br />
+ただし、敵は移動中に目的地を変更できる。敵の目的地決定処理は<a href="https://taotao54321.github.io/LoghResource/enemy-strategy/">敵の戦略</a>を参照。</p>
+<p>以降、「距離」とは3次元空間上のユークリッド距離、即ち <code>sqrt(dx^2 + dy^2 + dz^2)</code> を指すものとする。</p>
+<h2 id="wei-fang-jian-dui-henoyi-dong-ming-ling">味方艦隊への移動命令</h2>
+<p>移動命令はコスモスクリーン上で惑星を指定することで行う。<br />
+このとき、<code>(艦隊エネルギー) &gt; (現在地から目的地への距離)</code> でなければカーソル移動ができない。つまり、ある惑星への移動命令を出すためには、経路上の全惑星においてこの式が成り立っていなければならない。</p>
+<h2 id="jian-dui-noyi-dong">艦隊の移動</h2>
+<p>味方艦隊/敵艦隊は毎ターン以下のように移動する。</p>
+<p>まず現在位置から目的地への距離を求める。このとき <code>(移動力) &gt;= (距離)</code> なら目的地の座標へ移動する。</p>
+<p><code>(移動力) &lt; (距離)</code> の場合、到達までの所要ターン数を <code>ceil((距離) / (移動力))</code> で求める。<br />
+そして x, y, z 各方向について、残り移動距離を所要ターン数で切り捨て除算した値を移動量とし、その量だけ移動する(符号は目的地に近づく方向とする)。</p>
+<p>いずれの場合も、移動元から移動先への距離と同じ量のエネルギーを消費する。計算誤差のため、惑星間の距離と実際の総消費エネルギーは必ずしも一致しない。</p>
+
+
+
+</body>
+</html>

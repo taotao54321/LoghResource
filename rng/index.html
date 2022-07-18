@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>銀河英雄伝説 (FC) 攻略&#x2F;解析 - 乱数</title>
+
+  <link rel="stylesheet" href="https://taotao54321.github.io/LoghResource/main.css">
+</head>
+<body>
+
+
+<header>
+  <a href="https://taotao54321.github.io/LoghResource/">銀河英雄伝説 (FC) 攻略&#x2F;解析</a>
+</header>
+
+<p>
+Published on: 2022-07-15
+
+</p>
+
+<h1>乱数</h1>
+
+<p>乱数生成器は 8bit の内部状態を持つ。<br />
+アルゴリズムは線形合同法で、更新式は <code>x = 5*x + 5</code> (mod 256)。周期は 256。</p>
+<p>8bit の乱数を生成する場合、内部状態の上位ニブルと下位ニブルを入れ替えた値を用いる。<br />
+4bit の乱数を生成する場合、内部状態の上位ニブルを用いる。<br />
+ただし、ごく一部に内部状態の値をそのまま使っているコードがある。</p>
+
+
+
+</body>
+</html>

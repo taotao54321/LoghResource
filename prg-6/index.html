@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>銀河英雄伝説 (FC) 攻略&#x2F;解析 - PRG 6 マップ</title>
+
+  <link rel="stylesheet" href="https://taotao54321.github.io/LoghResource/main.css">
+</head>
+<body>
+
+
+<header>
+  <a href="https://taotao54321.github.io/LoghResource/">銀河英雄伝説 (FC) 攻略&#x2F;解析</a>
+</header>
+
+<p>
+Published on: 2022-07-09
+
+</p>
+
+<h1>PRG 6 マップ</h1>
+
+<h2 id="gai-yao">概要</h2>
+<table><thead><tr><th>アドレス</th><th>型</th><th>内容</th></tr></thead><tbody>
+<tr><td><code>$8000</code></td><td><code>ptr[16]</code></td><td>ルーチンエクスポートテーブルA</td></tr>
+<tr><td><code>$8020</code></td><td><code>ptr[16]</code></td><td>ルーチンエクスポートテーブルB</td></tr>
+<tr><td><code>$8040</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$8041</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$8063</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$8085</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$80A7</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$80C9</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$80EB</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$810D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$812D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$813D</code></td><td><code>u8[96]</code></td><td></td></tr>
+<tr><td><code>$819D</code></td><td><code>u8[16]</code></td><td></td></tr>
+<tr><td><code>$81AD</code></td><td><code>u8[192]</code></td><td></td></tr>
+<tr><td><code>$826D</code></td><td><code>ptr[32]</code></td><td></td></tr>
+<tr><td><code>$82AD</code></td><td><code>u8[128]</code></td><td></td></tr>
+<tr><td><code>$832D</code></td><td><code>u8[129]</code></td><td></td></tr>
+<tr><td><code>$83AE</code></td><td><code>u8[129]</code></td><td></td></tr>
+<tr><td><code>$842F</code></td><td><code>u8[129]</code></td><td></td></tr>
+<tr><td><code>$84B0</code></td><td><code>u8[129]</code></td><td></td></tr>
+<tr><td><code>$8531</code></td><td><code>u8[129]</code></td><td></td></tr>
+<tr><td><code>$85B2</code></td><td><code>u8[129]</code></td><td></td></tr>
+<tr><td><code>$8633</code></td><td><code>u8[129]</code></td><td></td></tr>
+<tr><td><code>$86B4</code></td><td><code>u8[129]</code></td><td></td></tr>
+<tr><td><code>$8735</code></td><td><code>u8[1355]</code></td><td></td></tr>
+<tr><td><code>$8C80</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$8CBB</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$8CDD</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$8CE9</code></td><td><code>u8[96]</code></td><td></td></tr>
+<tr><td><code>$8D49</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$8D6B</code></td><td><code>u8[384]</code></td><td></td></tr>
+<tr><td><code>$8EEB</code></td><td><code>code</code></td><td>(未使用、エクスポート)</td></tr>
+<tr><td><code>$8F1D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$91EC</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$94AB</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$978C</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$9A35</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$9D7B</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$9FC8</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$9FD7</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$9FE2</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A00F</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A02B</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A033</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A060</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A089</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A0B2</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A0E0</code></td><td><code>code</code></td><td>各惑星の敵駐留艦隊の兵力初期化など</td></tr>
+<tr><td><code>$A13F</code></td><td><code>code</code></td><td>各惑星の敵フォーメーションを初期化するルーチン</td></tr>
+<tr><td><code>$A14D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A15B</code></td><td><code>u8[32]</code></td><td></td></tr>
+<tr><td><code>$A17B</code></td><td><code>u8[32]</code></td><td>各惑星の敵フォーメーションテーブル</td></tr>
+<tr><td><code>$A19B</code></td><td><code>u8[64]</code></td><td></td></tr>
+<tr><td><code>$A1DB</code></td><td><code>code</code></td><td>(エクスポート) エネルギー不足判定ルーチン</td></tr>
+<tr><td><code>$A201</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A239</code></td><td><code>code</code></td><td>現在処理している味方艦隊のダメージ加算結果が 100 ならば 99 にするルーチン</td></tr>
+<tr><td><code>$A24F</code></td><td><code>code</code></td><td>(エクスポート) 現在処理している味方艦隊のデータ更新ルーチン (艦隊指揮官の報告の直前に呼ばれる)</td></tr>
+<tr><td><code>$A2C0</code></td><td><code>code</code></td><td>現在処理している味方艦隊のコマンドに応じたデータ更新関数を呼ぶルーチン</td></tr>
+<tr><td><code>$A2D3</code></td><td><code>code</code></td><td>現在処理している味方艦隊のデータ更新: 移動or退却</td></tr>
+<tr><td><code>$A2FD</code></td><td><code>code</code></td><td>現在処理している味方艦隊のデータ更新: 休息</td></tr>
+<tr><td><code>$A303</code></td><td><code>code</code></td><td>現在処理している味方艦隊のデータ更新: 補給</td></tr>
+<tr><td><code>$A316</code></td><td><code>code</code></td><td>現在処理している味方艦隊の食料とエネルギーを 50 増やし、ダメージを 50 減らすルーチン</td></tr>
+<tr><td><code>$A31D</code></td><td><code>code</code></td><td>現在処理している味方艦隊の食料を 50 増やすルーチン</td></tr>
+<tr><td><code>$A323</code></td><td><code>code</code></td><td>現在処理している味方艦隊のエネルギーを 50 増やし、ダメージを 50 減らすルーチン</td></tr>
+<tr><td><code>$A331</code></td><td><code>i8[17]</code></td><td>惑星種別ごとのアクシデントによるエネルギー加算値 (0以下)</td></tr>
+<tr><td><code>$A342</code></td><td><code>i8[17]</code></td><td>惑星種別ごとのアクシデントによる食料加算値 (0以下)</td></tr>
+<tr><td><code>$A353</code></td><td><code>u8[17]</code></td><td>惑星種別ごとのアクシデントによるダメージ加算値 (0以上)</td></tr>
+<tr><td><code>$A364</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A370</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A38C</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A3AE</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A3D0</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A3EE</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A41B</code></td><td><code>u8[17]</code></td><td>惑星種別ごとのアクシデントメッセージのスクリプトID配列 (0xFF:無効エントリ)</td></tr>
+<tr><td><code>$A42C</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A435</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A44F</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A49A</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A4D2</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A510</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A532</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A545</code></td><td><code>code</code></td><td>(未使用、エクスポート)</td></tr>
+<tr><td><code>$A56F</code></td><td><code>u8[32]</code></td><td>各惑星の種別テーブル</td></tr>
+<tr><td><code>$A58F</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A5B1</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A5EA</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A688</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A6AA</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A6BE</code></td><td><code>code</code></td><td>(エクスポート) 戦闘におけるフォーメーション決定までの処理ルーチン</td></tr>
+<tr><td><code>$A6F7</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A716</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A735</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A754</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A794</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A7CE</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A7ED</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A80F</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A82E</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A85B</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A885</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A8CD</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A93C</code></td><td><code>code</code></td><td>偵察報告: 敵艦隊情報</td></tr>
+<tr><td><code>$A9AD</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A9C1</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$A9DF</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A9EA</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$AA49</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$AA89</code></td><td><code>u8[32]</code></td><td></td></tr>
+<tr><td><code>$AAA9</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ACC8</code></td><td><code>code</code></td><td>(エクスポート) 指定した味方艦隊の疲労度に符号付き数を加え、結果を <code>0..=100</code> に clamp する</td></tr>
+<tr><td><code>$ACDF</code></td><td><code>code</code></td><td>指定した味方艦隊のエネルギーに符号付き数を加え、結果を <code>0..=100</code> に clamp する</td></tr>
+<tr><td><code>$ACF6</code></td><td><code>code</code></td><td>指定した味方艦隊の食料に符号付き数を加え、結果を <code>0..=100</code> に clamp する</td></tr>
+<tr><td><code>$AD0D</code></td><td><code>code</code></td><td>指定した味方艦隊のダメージに符号付き数を加え、結果を <code>0..=100</code> に clamp する</td></tr>
+<tr><td><code>$AD24</code></td><td><code>code</code></td><td>符号付き加算を行い、結果を <code>0..=100</code> に clamp する</td></tr>
+<tr><td><code>$AD43</code></td><td><code>code</code></td><td>(エクスポート) 味方の戦略フェイズルーチン</td></tr>
+<tr><td><code>$ADBB</code></td><td><code>code</code></td><td>キルヒアイスによるリセット勧告判定/処理ルーチン</td></tr>
+<tr><td><code>$ADE4</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$AE05</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$AE26</code></td><td><code>code</code></td><td>キルヒアイスによる疲労度関連メッセージ判定/処理ルーチン</td></tr>
+<tr><td><code>$AE54</code></td><td><code>u8[4]</code></td><td>キルヒアイスによる疲労度関連メッセージのスクリプトID配列</td></tr>
+<tr><td><code>$AE58</code></td><td><code>code</code></td><td>ヤン艦隊と交戦している場合にその旨報告するルーチン</td></tr>
+<tr><td><code>$AEA9</code></td><td><code>u8[16]</code></td><td>ヤン艦隊との交戦報告メッセージのスクリプトID配列</td></tr>
+<tr><td><code>$AEB9</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$AF56</code></td><td><code>code</code></td><td>指定した味方艦隊へのコマンドに対応するルーチンを呼ぶ</td></tr>
+<tr><td><code>$AF65</code></td><td><code>code</code></td><td>コマンド: 戦闘続行</td></tr>
+<tr><td><code>$AF74</code></td><td><code>code</code></td><td>コマンド: 退却</td></tr>
+<tr><td><code>$AFAD</code></td><td><code>code</code></td><td>コマンド: 移動</td></tr>
+<tr><td><code>$AFE6</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$AFEC</code></td><td><code>code</code></td><td>コマンド: 偵察</td></tr>
+<tr><td><code>$B02C</code></td><td><code>code</code></td><td>コマンド: 休息</td></tr>
+<tr><td><code>$B045</code></td><td><code>u8[32]</code></td><td></td></tr>
+<tr><td><code>$B065</code></td><td><code>code</code></td><td>コマンド: 補給</td></tr>
+<tr><td><code>$B070</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B0C6</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B108</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B120</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B153</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B15E</code></td><td><code>code</code></td><td>味方艦隊表に表示するエネルギー/食料/ダメージ/疲労度を返すルーチン</td></tr>
+<tr><td><code>$B19A</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B1BA</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B1CF</code></td><td><code>u8[22]</code></td><td></td></tr>
+<tr><td><code>$B1E5</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B1FA</code></td><td><code>u8[22]</code></td><td></td></tr>
+<tr><td><code>$B210</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B225</code></td><td><code>u8[22]</code></td><td></td></tr>
+<tr><td><code>$B23B</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B250</code></td><td><code>u8[22]</code></td><td></td></tr>
+<tr><td><code>$B266</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B279</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B291</code></td><td><code>u8[32]</code></td><td></td></tr>
+<tr><td><code>$B2B1</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B58C</code></td><td><code>code</code></td><td>現在処理している味方艦隊の現在地から偵察先までの所要日数を見積もるルーチン</td></tr>
+<tr><td><code>$B5F9</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B62B</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B63A</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B661</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B6A3</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B6E5</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B704</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B727</code></td><td><code>u8[32]</code></td><td></td></tr>
+<tr><td><code>$B747</code></td><td><code>u8[128]</code></td><td></td></tr>
+<tr><td><code>$B7C7</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$B815</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B838</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B850</code></td><td><code>u8[27]</code></td><td></td></tr>
+<tr><td><code>$B86B</code></td><td><code>u8[36]</code></td><td></td></tr>
+<tr><td><code>$B88F</code></td><td><code>code</code></td><td>(未使用、エクスポート)</td></tr>
+<tr><td><code>$B8C4</code></td><td><code>code</code></td><td>(未使用)</td></tr>
+<tr><td><code>$B8EC</code></td><td><code>code</code></td><td>(未使用)</td></tr>
+<tr><td><code>$B8F9-$BFFF</code></td><td></td><td>(未使用)</td></tr>
+</tbody></table>
+
+
+
+</body>
+</html>

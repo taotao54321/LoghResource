@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+header {
+    background-color: #AAAAAA;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+.fixedTable-wrapper {
+    overflow: scroll;
+    max-height: 50vh;
+}
+
+.fixedTable-table {
+    position: relative;
+}
+
+.fixedTable-th {
+    background-clip: padding-box;
+    background-color: lightgreen;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+h1, h2, h3 {
+    background-color: #CCCCCC;
+}
+
+code, kbd {
+    background-color: #EEEEEE;
+}

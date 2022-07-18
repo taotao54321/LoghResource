@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>銀河英雄伝説 (FC) 攻略&#x2F;解析 - PRG 7 マップ</title>
+
+  <link rel="stylesheet" href="https://taotao54321.github.io/LoghResource/main.css">
+</head>
+<body>
+
+
+<header>
+  <a href="https://taotao54321.github.io/LoghResource/">銀河英雄伝説 (FC) 攻略&#x2F;解析</a>
+</header>
+
+<p>
+Published on: 2022-07-09
+
+</p>
+
+<h1>PRG 7 マップ</h1>
+
+<h2 id="gai-yao">概要</h2>
+<table><thead><tr><th>アドレス</th><th>型</th><th>内容</th></tr></thead><tbody>
+<tr><td><code>$C000</code></td><td><code>code</code></td><td>(エクスポート) 乗算 (<code>u8 * u8 -&gt; u16</code>)</td></tr>
+<tr><td><code>$C028</code></td><td><code>code</code></td><td>(エクスポート) 除算 (<code>u16 / u16 -&gt; (u16, u8))</code></td></tr>
+<tr><td><code>$C0A3</code></td><td><code>code</code></td><td>(エクスポート) 3 次元空間の 2 点間の距離を得る</td></tr>
+<tr><td><code>$C0C0</code></td><td><code>code</code></td><td><code>$E0-$E5</code> を <code>$B0-$B5</code> へコピーする</td></tr>
+<tr><td><code>$C0CC</code></td><td><code>code</code></td><td>3 次元空間の 2 点について <code>(dx^2, dy^2, dz^2)</code> を得る</td></tr>
+<tr><td><code>$C0F1</code></td><td><code>code</code></td><td>(エクスポート) <code>A = abs(A)</code></td></tr>
+<tr><td><code>$C0FB</code></td><td><code>code</code></td><td>3 つの 16bit 値 <code>$A0</code>, <code>$A2</code>, <code>$A4</code> の総和を 16bit 値 <code>$A6</code> に返す</td></tr>
+<tr><td><code>$C116</code></td><td><code>code</code></td><td>平方根 (ニュートン法)</td></tr>
+<tr><td><code>$C128</code></td><td><code>code</code></td><td>16bit 値 <code>$A6</code> を 2 で割った結果を 16bit 値 <code>$A8</code> に返す</td></tr>
+<tr><td><code>$C144</code></td><td><code>code</code></td><td>ニュートン法の更新式</td></tr>
+<tr><td><code>$C178</code></td><td><code>code</code></td><td>16bit 値 <code>$AA</code> を 16bit 値 <code>$A8</code> にコピーする</td></tr>
+<tr><td><code>$C181</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$C199</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$C1DD</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$C220</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C23E</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$C288</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C2C6</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C30E</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C325</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C337</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C340</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C367</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C380</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C396</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C3AC</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C3CC</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C3EC</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C3F7</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C402</code></td><td><code>code</code></td><td>(未使用)</td></tr>
+<tr><td><code>$C40D</code></td><td><code>code</code></td><td>(未使用)</td></tr>
+<tr><td><code>$C418</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C41D</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C422</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C429</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C42D</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C431</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C442</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C446</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C44B</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C450</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C465</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C46F</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C472</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C482</code></td><td><code>code</code></td><td><code>u8</code> 値の 10 進フォーマット</td></tr>
+<tr><td><code>$C48B</code></td><td><code>code</code></td><td><code>u16</code> 値の 10 進フォーマット</td></tr>
+<tr><td><code>$C48D</code></td><td><code>code</code></td><td>10 進フォーマット下請け</td></tr>
+<tr><td><code>$C4C7</code></td><td><code>u16[5]</code></td><td>10 の累乗テーブル</td></tr>
+<tr><td><code>$C4D1</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C4F7</code></td><td><code>code</code></td><td>ポインタ <code>$00</code> に 2 を加える</td></tr>
+<tr><td><code>$C4FF</code></td><td><code>code</code></td><td>ポインタ <code>$00</code> に 1 を加える</td></tr>
+<tr><td><code>$C504</code></td><td><code>code</code></td><td>ポインタ <code>$00</code> への加算処理下請け</td></tr>
+<tr><td><code>$C50D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C51D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C55E</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C63F</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C656</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C685</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C6C1</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C6FB</code></td><td><code>u8[3]</code></td><td></td></tr>
+<tr><td><code>$C6FE</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C70D</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C739</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C781</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C798</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C7AA</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C7B3</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C7DA</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C7F3</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C809</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C81F</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C83F</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C85F</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C86A</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C875</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C87A</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C87F</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C886</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C88A</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C88E</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C89F</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C8A3</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C8A8</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C8AD</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C8C2</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C8CC</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C8CF</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C8DF</code></td><td><code>code</code></td><td><code>u8</code> 値の 10 進フォーマット</td></tr>
+<tr><td><code>$C8E8</code></td><td><code>code</code></td><td><code>u16</code> 値の 10 進フォーマット</td></tr>
+<tr><td><code>$C8EA</code></td><td><code>code</code></td><td>10 進フォーマット下請け</td></tr>
+<tr><td><code>$C924</code></td><td><code>u16[5]</code></td><td>10 の累乗テーブル</td></tr>
+<tr><td><code>$C92E</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$C954</code></td><td><code>code</code></td><td>ポインタ <code>$00</code> に 2 を加える</td></tr>
+<tr><td><code>$C95C</code></td><td><code>code</code></td><td>ポインタ <code>$00</code> に 1 を加える</td></tr>
+<tr><td><code>$C961</code></td><td><code>code</code></td><td>ポインタ <code>$00</code> への加算処理下請け</td></tr>
+<tr><td><code>$C96A</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C97D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$C997</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$CA9E</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$CAB4</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$CABB</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$CAD6</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$CB0E</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$CB3D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$CB79</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$CBAD</code></td><td><code>u8[3]</code></td><td></td></tr>
+<tr><td><code>$CBB0</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$CBF8</code></td><td><code>code</code></td><td>(エクスポート) 指定した惑星の<a href="https://taotao54321.github.io/LoghResource/ram/#planet-struct">惑星構造体</a>を返す</td></tr>
+<tr><td><code>$CC0D</code></td><td><code>code</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#ally-struct-a">味方艦隊構造体A</a>配列を初期化する</td></tr>
+<tr><td><code>$CC25</code></td><td><code>code</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#ally-struct-b">味方艦隊構造体B</a>配列を初期化する</td></tr>
+<tr><td><code>$CC3F</code></td><td><code>code</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#enemy-struct-a">敵艦隊構造体A</a>配列を初期化する</td></tr>
+<tr><td><code>$CC57</code></td><td><code>code</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#enemy-struct-b">敵艦隊構造体B</a>配列を初期化する</td></tr>
+<tr><td><code>$CC71</code></td><td><code>code</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#planet-struct">惑星構造体</a>配列を初期化する</td></tr>
+<tr><td><code>$CC8B</code></td><td><code>code</code></td><td>(エクスポート) 乱数生成器の内部状態を更新し、8bit の乱数を返す</td></tr>
+<tr><td><code>$CCB1</code></td><td><code>code</code></td><td>(エクスポート) 乱数生成器の内部状態を更新し、4bit の乱数を返す</td></tr>
+<tr><td><code>$CCBF</code></td><td><code>code</code></td><td>(未使用)</td></tr>
+<tr><td><code>$CCD1</code></td><td><code>code</code></td><td>(エクスポート) 矩形に敷き詰められたスプライト群をスプライトバッファに追加する</td></tr>
+<tr><td><code>$CD3F</code></td><td><code>code</code></td><td>(エクスポート) ウィンドウ上でのコマンド選択処理</td></tr>
+<tr><td><code>$CDBA</code></td><td><code>u8[3]</code></td><td>カーソルスプライトデータ</td></tr>
+<tr><td><code>$CDBD-$E7FF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$E800</code></td><td><code>code</code></td><td>(エクスポート) RESET ハンドラ</td></tr>
+<tr><td><code>$E88B</code></td><td><code>code</code></td><td>MMC1 制御レジスタに値を書く</td></tr>
+<tr><td><code>$E89F</code></td><td><code>code</code></td><td>パターンテーブル <code>$0000-$0FFF</code> の CHR バンク切り替え</td></tr>
+<tr><td><code>$E8B3</code></td><td><code>code</code></td><td>パターンテーブル <code>$1000-$1FFF</code> の CHR バンク切り替え</td></tr>
+<tr><td><code>$E8C7</code></td><td><code>code</code></td><td>PRG バンク切り替え</td></tr>
+<tr><td><code>$E8E9</code></td><td><code>code</code></td><td>NMI ハンドラ</td></tr>
+<tr><td><code>$E956</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$E97E</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$E99F</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$E9C9</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$E9D5</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$E9ED</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EA15</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EA23</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EA3D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EA55</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EA5F</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EA6A</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EA7B</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EA89</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EA89</code></td><td><code>code</code></td><td>(エクスポート) ネームテーブルを V ミラーにする</td></tr>
+<tr><td><code>$EAB2</code></td><td><code>code</code></td><td>(エクスポート) ネームテーブルを H ミラーにする</td></tr>
+<tr><td><code>$EABC</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EAC4</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EACA</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EADA</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EAE2</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EAE8</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EAF8</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EB00</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EB06</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EB1D</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EB25</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EB2B</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EB42</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EB68</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EB71</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EB77</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EB88</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EB8F</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EB9D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EBBD</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EBC2</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EBD4</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EBEE</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EC02</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EC16</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EC32</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EC69</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EC9F</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ECAD</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ECD2</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ECF0</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ED33</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ED41</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ED4F</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ED5D</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ED69</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ED78</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$ED99</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EDDC</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EDEA</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EE0E</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EE3A</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EE70</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EEAE</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EEDB</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF03</code></td><td><code>u8[16]</code></td><td></td></tr>
+<tr><td><code>$EF13</code></td><td><code>u8[4]</code></td><td></td></tr>
+<tr><td><code>$EF17</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EF24</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF2E</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF38</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF4C</code></td><td><code>u8[4]</code></td><td></td></tr>
+<tr><td><code>$EF50</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF54</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF56</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF64</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF69</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EF6E</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF73</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EF78</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF7D</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EF81</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF85</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF87</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF8B</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EF8F</code></td><td><code>code</code></td><td>(未使用)</td></tr>
+<tr><td><code>$EF93</code></td><td><code>code</code></td><td>(未使用)</td></tr>
+<tr><td><code>$EF95</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EF97</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$EFA2</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EFA7</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$EFB5</code></td><td><code>code</code></td><td>ポインタ <code>$33</code> に 1 を加える</td></tr>
+<tr><td><code>$EFC3</code></td><td><code>code</code></td><td>(エクスポート) (インライン引数あり)</td></tr>
+<tr><td><code>$EFFB</code></td><td><code>code</code></td><td>(エクスポート) (インライン引数あり)</td></tr>
+<tr><td><code>$F033</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F073</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F0AF</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F0D6</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F0E0</code></td><td><code>code</code></td><td>現在の状態を記録し、PRG バンクを切り替える</td></tr>
+<tr><td><code>$F0E7</code></td><td><code>code</code></td><td>PRG バンクを切り替え、その PRG-ID を記録する</td></tr>
+<tr><td><code>$F0EF</code></td><td><code>code</code></td><td>PRG 2 に切り替える</td></tr>
+<tr><td><code>$F0F5</code></td><td><code>code</code></td><td>PRG バンクを <code>$F0E7</code> で記録した PRG-ID に切り替える</td></tr>
+<tr><td><code>$F0FD</code></td><td><code>code</code></td><td><code>$F0E0</code> で記録した状態を復元する</td></tr>
+<tr><td><code>$F110</code></td><td><code>code</code></td><td><code>$F0E0</code> 下請け</td></tr>
+<tr><td><code>$F126</code></td><td><code>code</code></td><td><code>$F0FD</code> 下請け</td></tr>
+<tr><td><code>$F13C</code></td><td><code>code</code></td><td>NMI を禁止する</td></tr>
+<tr><td><code>$F146</code></td><td><code>code</code></td><td>NMI を許可する</td></tr>
+<tr><td><code>$F153</code></td><td><code>code</code></td><td>IRQ ハンドラ (単に <code>rti</code> するだけ)</td></tr>
+<tr><td><code>$F154</code></td><td><code>code</code></td><td>(エクスポート) 入力更新</td></tr>
+<tr><td><code>$F181</code></td><td><code>code</code></td><td>1Pおよび2Pの生入力を読み取る (拡張ポート対応)</td></tr>
+<tr><td><code>$F1AF</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$F1BC</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F1C1</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F1C5</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$F1C7</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F1CC</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$F1D2</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F1F1</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$F1F4</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$F1FA</code></td><td><code>code</code></td><td>(エクスポート) インライン引数で与えられたルーチンテーブル内の指定ルーチンへジャンプする</td></tr>
+<tr><td><code>$F217</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F23B</code></td><td><code>code</code></td><td>(エクスポート) 別の PRG バンクのルーチンを呼ぶ (エクスポートテーブル <code>$8000</code> を用いる)</td></tr>
+<tr><td><code>$F25F</code></td><td><code>code</code></td><td>(エクスポート) 別の PRG バンクのルーチンを呼ぶ (エクスポートテーブル <code>$8020</code> を用いる)</td></tr>
+<tr><td><code>$F283</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F28A</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F29E</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$F2C8</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F2E2</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F2FB</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F30C</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F345</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F376</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F380</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F3AC</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F3CD</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F3E8</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F3F3</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F439</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F4A4</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F4DB</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F57F</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F5A5</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F5C8</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F620</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F634</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F655</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F7D9</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F7E9</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F801</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F84B</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F981</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$F99C</code></td><td><code>u8[38]</code></td><td></td></tr>
+<tr><td><code>$F9C2</code></td><td><code>u8[210]</code></td><td></td></tr>
+<tr><td><code>$FA94</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$FAF8</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$FB29</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$FB41</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$FB55</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$FB63</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$FB6E</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$FB9F</code></td><td><code>u8[9]</code></td><td></td></tr>
+<tr><td><code>$FBA8</code></td><td><code>u8[64]</code></td><td></td></tr>
+<tr><td><code>$FBE8</code></td><td><code>code</code></td><td>(エクスポート) スクリプト処理</td></tr>
+<tr><td><code>$FC1D</code></td><td><code>code</code></td><td>スクリプト処理下請け</td></tr>
+<tr><td><code>$FC77</code></td><td><code>u8[124]</code></td><td></td></tr>
+<tr><td><code>$FCF3</code></td><td><code>code</code></td><td>ポインタ <code>$00</code> に 1 を加える</td></tr>
+<tr><td><code>$FD03-$FEFF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$FF00</code></td><td><code>code</code></td><td>メインルーチン</td></tr>
+<tr><td><code>$FF50-$FFF9</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$FFFA</code></td><td><code>ptr[3]</code></td><td>割り込みベクタ</td></tr>
+</tbody></table>
+
+
+
+</body>
+</html>

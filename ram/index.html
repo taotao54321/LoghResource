@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>銀河英雄伝説 (FC) 攻略&#x2F;解析 - RAM マップ</title>
+
+  <link rel="stylesheet" href="https://taotao54321.github.io/LoghResource/main.css">
+</head>
+<body>
+
+
+<header>
+  <a href="https://taotao54321.github.io/LoghResource/">銀河英雄伝説 (FC) 攻略&#x2F;解析</a>
+</header>
+
+<p>
+Published on: 2022-07-09
+
+</p>
+
+<h1>RAM マップ</h1>
+
+<h2 id="gai-yao">概要</h2>
+<table><thead><tr><th>アドレス</th><th>型</th><th>内容</th></tr></thead><tbody>
+<tr><td><code>$00-$01</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$02-$07</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$08</code></td><td><code>u8</code></td><td>ルーチン <code>$EFA7</code> への引数 (下位 CHR-ID)</td></tr>
+<tr><td><code>$09</code></td><td><code>u8</code></td><td>ルーチン <code>$EFA7</code> への引数 (上位 CHR-ID)</td></tr>
+<tr><td><code>$0A-$0D</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$0E</code></td><td><code>u8</code></td><td>PRG バンク切り替え時の PRG-ID 記録用</td></tr>
+<tr><td><code>$0F</code></td><td><code>u8</code></td><td>ソフトウェアスタック (ページ 7) 用スタックポインタ</td></tr>
+<tr><td><code>$10-$17</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$18</code></td><td><code>u8</code></td><td>NMI 制御用</td></tr>
+<tr><td><code>$19-$1B</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$1C-$24</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$25</code></td><td><code>u8</code></td><td>NMI カウンタ</td></tr>
+<tr><td><code>$26-$2D</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$2E-$30</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$31</code></td><td><code>u8</code></td><td>乱数生成器の戻り値</td></tr>
+<tr><td><code>$32</code></td><td><code>u8</code></td><td>乱数生成器の内部状態</td></tr>
+<tr><td><code>$33-$34</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$35</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$36</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$37</code></td><td><code>ptr</code></td><td></td></tr>
+<tr><td><code>$39-$3F</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$40-$47</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$48-$4C</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$4D-$5A</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$5B-$5F</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$60-$66</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$67</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$68-$6B</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$6C-$7F</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$80-$83</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$84-$88</code></td><td><code>u8[5]</code></td><td>数値の10進フォーマット用バッファ</td></tr>
+<tr><td><code>$89</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$8A</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$8B</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$8C</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$8D</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$8E</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$8F</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$90-$9F</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$A0-$B6</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$B7-$BE</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$BF-$E8</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$E9-$EF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$F0</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$F1-$F4</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$F5</code></td><td><code>u8</code></td><td>1P エッジ入力 (ABSTUDLR)</td></tr>
+<tr><td><code>$F6</code></td><td><code>u8</code></td><td>2P エッジ入力 (ABSTUDLR)</td></tr>
+<tr><td><code>$F7</code></td><td><code>u8</code></td><td>1P 生入力 (ABSTUDLR)</td></tr>
+<tr><td><code>$F8</code></td><td><code>u8</code></td><td>2P 生入力 (ABSTUDLR)</td></tr>
+<tr><td><code>$F9</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$FA</code></td><td></td><td></td></tr>
+<tr><td><code>$FB</code></td><td></td><td>常に 0</td></tr>
+<tr><td><code>$FC</code></td><td></td><td>PPU スクロールx 退避用</td></tr>
+<tr><td><code>$FD</code></td><td></td><td>PPU スクロールy 退避用</td></tr>
+<tr><td><code>$FE</code></td><td></td><td>PPU <code>$2001</code> 退避用</td></tr>
+<tr><td><code>$FF</code></td><td></td><td>PPU <code>$2000</code> 退避用</td></tr>
+<tr><td><code>$0100-$01FF</code></td><td></td><td>スタック領域</td></tr>
+<tr><td><code>$0200-$02FF</code></td><td><code>Sprite[64]</code></td><td>スプライトバッファ</td></tr>
+<tr><td><code>$0300-$03FF</code></td><td></td><td></td></tr>
+<tr><td><code>$0400-$041F</code></td><td></td><td></td></tr>
+<tr><td><code>$0420-$0421</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$0422-$0423</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$0424</code></td><td><code>u16</code></td><td></td></tr>
+<tr><td><code>$0426-$0427</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$0428</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$0429</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$042A-$042D</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$042E</code></td><td><code>u8</code></td><td>壊滅した敵艦隊の数</td></tr>
+<tr><td><code>$042F</code></td><td><code>u8</code></td><td>壊滅した味方艦隊の数</td></tr>
+<tr><td><code>$0430</code></td><td><code>u8</code></td><td>戦闘における敵の攻撃力</td></tr>
+<tr><td><code>$0431</code></td><td><code>u8</code></td><td>戦闘における味方の攻撃力</td></tr>
+<tr><td><code>$0432-$0433</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$0434</code></td><td><code>u8</code></td><td>戦闘における味方のフォーメーション (補正前、<code>1..=7</code>)</td></tr>
+<tr><td><code>$0435</code></td><td><code>u8</code></td><td>戦闘における敵のフォーメーション (補正前、<code>1..=7</code>)</td></tr>
+<tr><td><code>$0436</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$0437</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$0438</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$0439</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$043A</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$043B</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$043C</code></td><td><code>u8</code></td><td>現在の戦闘が行われている惑星ID</td></tr>
+<tr><td><code>$043D</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$043E</code></td><td><code>u8</code></td><td>現在の戦闘に参加している味方艦隊数 (<code>$04CC</code> と同じ値)</td></tr>
+<tr><td><code>$043F</code></td><td><code>u8</code></td><td>現在の戦闘に参加している敵艦隊数 (駐留艦隊含む。<code>$04CB</code> と同じ値)</td></tr>
+<tr><td><code>$0440</code></td><td><code>u16</code></td><td></td></tr>
+<tr><td><code>$0442</code></td><td><code>u16</code></td><td></td></tr>
+<tr><td><code>$0444</code></td><td><code>u8</code></td><td>(未使用。常に 0x32)</td></tr>
+<tr><td><code>$0445</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$0446</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$0447</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$0448</code></td><td><code>u16</code></td><td>経過日数 (表示時は上位 8bit が無視される))</td></tr>
+<tr><td><code>$0449</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$044A</code></td><td><code>u8</code></td><td>キルヒアイスによるリセット勧告を既に行ったか (0:false, 0xFF:true)</td></tr>
+<tr><td><code>$044B-$047F</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$0480-$049F</code></td><td></td><td></td></tr>
+<tr><td><code>$04A0</code></td><td><code>u8[8]</code></td><td><a href="https://taotao54321.github.io/LoghResource/ram/#ally-struct-b">味方艦隊構造体B</a>または<a href="https://taotao54321.github.io/LoghResource/ram/#enemy-struct-b">敵艦隊構造体B</a>を展開するバッファ</td></tr>
+<tr><td><code>$04A8-$04AF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$04B0</code></td><td><code>u8[16]</code></td><td><a href="https://taotao54321.github.io/LoghResource/ram/#ally-struct-a">味方艦隊構造体A</a>または<a href="https://taotao54321.github.io/LoghResource/ram/#enemy-struct-a">敵艦隊構造体A</a>を展開するバッファ</td></tr>
+<tr><td><code>$04C0</code></td><td><code>u8</code></td><td>現在処理している艦隊の番号 (1-based)</td></tr>
+<tr><td><code>$04C1</code></td><td><code>u8</code></td><td>現在処理している艦隊の指揮官名に対応する単語ID</td></tr>
+<tr><td><code>$04C2</code></td><td><code>u8</code></td><td>現在処理している艦隊の現在地または目的地の惑星</td></tr>
+<tr><td><code>$04C3</code></td><td><code>u8</code></td><td>現在処理している艦隊の移動力 (write-only)</td></tr>
+<tr><td><code>$04C4</code></td><td><code>u8</code></td><td>現在処理している艦隊の何らかの属性 (write-only)</td></tr>
+<tr><td><code>$04C5</code></td><td><code>u8</code></td><td>現在処理している艦隊の疲労度</td></tr>
+<tr><td><code>$04C6</code></td><td><code>u8</code></td><td>現在処理している艦隊のエネルギー</td></tr>
+<tr><td><code>$04C7</code></td><td><code>u8</code></td><td>現在処理している艦隊の食料</td></tr>
+<tr><td><code>$04C8</code></td><td><code>u8</code></td><td>現在処理している艦隊のダメージ</td></tr>
+<tr><td><code>$04C9</code></td><td><code>u8</code></td><td>現在処理している艦隊のコマンド</td></tr>
+<tr><td><code>$04CA</code></td><td><code>u8</code></td><td>現在処理している艦隊の目的地 (write-only)</td></tr>
+<tr><td><code>$04CB</code></td><td><code>u8</code></td><td>現在の戦闘に参加している敵艦隊数 (駐留艦隊含む。<code>$043F</code> と同じ値)</td></tr>
+<tr><td><code>$04CC</code></td><td><code>u8</code></td><td>現在の戦闘に参加している味方艦隊数 (<code>$043E</code> と同じ値)</td></tr>
+<tr><td><code>$04CD</code></td><td><code>u16</code></td><td>敵兵力を隻数に変換した結果</td></tr>
+<tr><td><code>$04CF</code></td><td><code>u16</code></td><td>味方兵力を隻数に変換した結果</td></tr>
+<tr><td><code>$04D1</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$04D2</code></td><td><code>u8</code></td><td>味方艦隊が惑星に到着した際、隣接する 4 つの惑星のうち無補給で行ける惑星の数(エネルギー不足判定用)</td></tr>
+<tr><td><code>$04D3</code></td><td><code>u8</code></td><td>現在処理している艦隊の輸送待ち日数</td></tr>
+<tr><td><code>$04D4</code></td><td><code>u8</code></td><td>現在処理している艦隊のインデックス (メモリ上での並び順と一致する)</td></tr>
+<tr><td><code>$04D5</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$04D6</code></td><td><code>u8[4]</code></td><td>現在処理している艦隊が到着した惑星に隣接する 4 つの惑星ID</td></tr>
+<tr><td><code>$04DA</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$04DB</code></td><td><code>u16</code></td><td></td></tr>
+<tr><td><code>$04DD</code></td><td><code>u16</code></td><td></td></tr>
+<tr><td><code>$04DF</code></td><td><code>u8</code></td><td>現在処理している艦隊のアクシデントID (アクシデントが起こっていなければ 0xFF)</td></tr>
+<tr><td><code>$04E0</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$04E1</code></td><td><code>u8</code></td><td>現在処理している艦隊の偵察先惑星ID</td></tr>
+<tr><td><code>$04E2</code></td><td><code>u8</code></td><td>現在処理している艦隊の偵察先惑星への見積もり所要日数</td></tr>
+<tr><td><code>$04E3</code></td><td><code>u8</code></td><td>現在処理している艦隊の偵察先で発見した敵艦隊の番号 (1-based)</td></tr>
+<tr><td><code>$04E4</code></td><td><code>u8</code></td><td>現在処理している艦隊の偵察先で発見した敵艦隊の指揮官名に対応する単語ID</td></tr>
+<tr><td><code>$04E5</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$04E6</code></td><td></td><td></td></tr>
+<tr><td><code>$04E7</code></td><td><code>u8</code></td><td>現在の戦闘にヤンが参加しているかどうか (0:false, 0xFF:true)</td></tr>
+<tr><td><code>$04E8</code></td><td><code>u8</code></td><td>ヤンが戦闘している惑星ID (ヤンが戦闘していなければ 0xFF)</td></tr>
+<tr><td><code>$04E9</code></td><td><code>u8</code></td><td>キルヒアイスによる疲労度関連メッセージ選択用カウンタ</td></tr>
+<tr><td><code>$04EA-$04EE</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$04EF</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$04F0-$04FF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$0500-$0505</code></td><td></td><td>雑用</td></tr>
+<tr><td><code>$0506-$050F</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$0510-$05FF</code></td><td></td><td></td></tr>
+<tr><td><code>$0600-$06FF</code></td><td></td><td></td></tr>
+<tr><td><code>$0700-$07FF</code></td><td></td><td></td></tr>
+<tr><td><code>$6000-$604F</code></td><td></td><td></td></tr>
+<tr><td><code>$6050-$614F</code></td><td><code>u8[16][16]</code></td><td><a href="https://taotao54321.github.io/LoghResource/ram/#ally-struct-a">味方艦隊構造体A</a>の配列</td></tr>
+<tr><td><code>$6150-$624F</code></td><td><code>u8[16][16]</code></td><td><a href="https://taotao54321.github.io/LoghResource/ram/#enemy-struct-a">敵艦隊構造体A</a>の配列</td></tr>
+<tr><td><code>$6250-$62CF</code></td><td><code>u8[8][16]</code></td><td><a href="https://taotao54321.github.io/LoghResource/ram/#ally-struct-b">味方艦隊構造体B</a>の配列</td></tr>
+<tr><td><code>$62D0-$634F</code></td><td><code>u8[8][16]</code></td><td><a href="https://taotao54321.github.io/LoghResource/ram/#enemy-struct-b">敵艦隊構造体B</a>の配列</td></tr>
+<tr><td><code>$6350-$63FF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$6400-$647F</code></td><td><code>u8[4][32]</code></td><td><a href="https://taotao54321.github.io/LoghResource/ram/#planet-struct">惑星構造体</a>の配列</td></tr>
+<tr><td><code>$6480-$64FF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$6500-$657F</code></td><td></td><td></td></tr>
+<tr><td><code>$6580-$658F</code></td><td><code>u8[16]</code></td><td>現在の戦闘に参加している味方艦隊インデックスの配列 (0xFF 終端)</td></tr>
+<tr><td><code>$6590-$659F</code></td><td><code>u8[16]</code></td><td>現在の戦闘に参加している敵艦隊インデックスの配列 (0xFF 終端)</td></tr>
+<tr><td><code>$65A0-$65BF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$65C0-$65C7</code></td><td></td><td></td></tr>
+<tr><td><code>$65C8</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$65C9</code></td><td><code>u8</code></td><td></td></tr>
+<tr><td><code>$65CA-$65CF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$65D0-$65EF</code></td><td><code>u8[32]</code></td><td>各惑星の敵フォーメーション (不変)</td></tr>
+<tr><td><code>$65F0-$65FF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$6600-$661F</code></td><td><code>u8[32]</code></td><td>各惑星に対応するデータ (write-only)</td></tr>
+<tr><td><code>$6620-$663F</code></td><td><code>u8[32]</code></td><td>各惑星の駐留艦隊の兵力</td></tr>
+<tr><td><code>$6640-$6FFF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$7000-$73FF</code></td><td></td><td></td></tr>
+<tr><td><code>$7400-$7FFF</code></td><td></td><td>(未使用)</td></tr>
+</tbody></table>
+<h2 id="detagou-zao">データ構造</h2>
+<h3 id="ally-struct-a">味方艦隊構造体A (len: 16)</h3>
+<table><thead><tr><th>オフセット</th><th>型</th><th>内容</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td></td><td></td></tr>
+<tr><td><code>1</code></td><td><code>u8</code></td><td>座標x</td></tr>
+<tr><td><code>2</code></td><td><code>u8</code></td><td>座標y</td></tr>
+<tr><td><code>3</code></td><td><code>u8</code></td><td>座標z</td></tr>
+<tr><td><code>4</code></td><td><code>u8</code></td><td>偵察先惑星ID</td></tr>
+<tr><td><code>5</code></td><td><code>u8</code></td><td>食料</td></tr>
+<tr><td><code>6</code></td><td><code>u8</code></td><td>輸送待ち日数</td></tr>
+<tr><td><code>7</code></td><td><code>u8</code></td><td>疲労度</td></tr>
+<tr><td><code>8</code></td><td><code>u8</code></td><td>エネルギー</td></tr>
+<tr><td><code>9</code></td><td><code>u8</code></td><td>ダメージ</td></tr>
+<tr><td><code>10</code></td><td></td><td></td></tr>
+<tr><td><code>11</code></td><td><code>u8</code></td><td>移動力</td></tr>
+<tr><td><code>12-15</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3 id="enemy-struct-a">敵艦隊構造体A (len: 16)</h3>
+<table><thead><tr><th>オフセット</th><th>型</th><th>内容</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td></td><td></td></tr>
+<tr><td><code>1</code></td><td><code>u8</code></td><td>座標x</td></tr>
+<tr><td><code>2</code></td><td><code>u8</code></td><td>座標y</td></tr>
+<tr><td><code>3</code></td><td><code>u8</code></td><td>座標z</td></tr>
+<tr><td><code>4-6</code></td><td></td><td></td></tr>
+<tr><td><code>7</code></td><td><code>u8</code></td><td>疲労度</td></tr>
+<tr><td><code>8</code></td><td></td><td></td></tr>
+<tr><td><code>9</code></td><td><code>u8</code></td><td>ダメージ</td></tr>
+<tr><td><code>10</code></td><td></td><td></td></tr>
+<tr><td><code>11</code></td><td><code>u8</code></td><td>移動力</td></tr>
+<tr><td><code>12</code></td><td></td><td></td></tr>
+<tr><td><code>13</code></td><td><code>u8</code></td><td>マーク対象の味方艦隊インデックス (write-only)</td></tr>
+<tr><td><code>14-15</code></td><td></td><td></td></tr>
+</tbody></table>
+<h3 id="ally-struct-b">味方艦隊構造体B (len: 8)</h3>
+<table><thead><tr><th>オフセット</th><th>型</th><th>内容</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td><code>u8</code></td><td>状態 (bit0:?, bit1:敵艦隊によりマークされている, bit2-4:?, bit5:コマンド入力済み, bit6:惑星に滞在中, bit7:健在)</td></tr>
+<tr><td><code>1-4</code></td><td></td><td></td></tr>
+<tr><td><code>5</code></td><td><code>u8</code></td><td>現在地または目的地の惑星ID</td></tr>
+<tr><td><code>6</code></td><td><code>u8</code></td><td>コマンド (0:移動, 1:偵察, 2:休息, 3:補給, 4:戦闘, 5:退却, 6:停止)</td></tr>
+<tr><td><code>7</code></td><td><code>u8</code></td><td>味方艦隊インデックス (メモリ上での並び順と一致する)</td></tr>
+</tbody></table>
+<h3 id="enemy-struct-b">敵艦隊構造体B (len: 8)</h3>
+<table><thead><tr><th>オフセット</th><th>型</th><th>内容</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td><code>u8</code></td><td>状態 (bit0-5:?, bit6:惑星に滞在中, bit7:健在)</td></tr>
+<tr><td><code>1-4</code></td><td></td><td></td></tr>
+<tr><td><code>5</code></td><td><code>u8</code></td><td>現在地または目的地の惑星ID</td></tr>
+<tr><td><code>6</code></td><td><code>u8</code></td><td>戦略ID (通常は <code>0..=3</code>)</td></tr>
+<tr><td><code>7</code></td><td><code>u8</code></td><td>敵艦隊インデックス (メモリ上での並び順と一致する)</td></tr>
+</tbody></table>
+<h3 id="planet-struct">惑星構造体 (len: 4)</h3>
+<table><thead><tr><th>オフセット</th><th>型</th><th>内容</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td><code>u8</code></td><td>座標x (不変)</td></tr>
+<tr><td><code>1</code></td><td><code>u8</code></td><td>座標y (不変)</td></tr>
+<tr><td><code>2</code></td><td><code>u8</code></td><td>座標z (不変)</td></tr>
+<tr><td><code>3</code></td><td><code>u8</code></td><td>敵の退却先などに関係 (可変)</td></tr>
+</tbody></table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>銀河英雄伝説 (FC) 攻略&#x2F;解析 - PRG 0 マップ</title>
+
+  <link rel="stylesheet" href="https://taotao54321.github.io/LoghResource/main.css">
+</head>
+<body>
+
+
+<header>
+  <a href="https://taotao54321.github.io/LoghResource/">銀河英雄伝説 (FC) 攻略&#x2F;解析</a>
+</header>
+
+<p>
+Published on: 2022-07-09
+
+</p>
+
+<h1>PRG 0 マップ</h1>
+
+<h2 id="gai-yao">概要</h2>
+<table><thead><tr><th>アドレス</th><th>型</th><th>内容</th></tr></thead><tbody>
+<tr><td><code>$8000</code></td><td><code>ptr[1]</code></td><td>ルーチンエクスポートテーブル</td></tr>
+<tr><td><code>$8002-$80FF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$8100</code></td><td><code>u8[4][32]</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#planet-struct">惑星構造体</a>配列初期データ</td></tr>
+<tr><td><code>$8180-$81FF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$8200</code></td><td><code>u8[16][16]</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#ally-struct-a">味方艦隊構造体A</a>配列初期データ</td></tr>
+<tr><td><code>$8300</code></td><td><code>u8[16][16]</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#enemy-struct-a">敵艦隊構造体A</a>配列初期データ</td></tr>
+<tr><td><code>$8400</code></td><td><code>u8[8][16]</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#ally-struct-b">味方艦隊構造体B</a>配列初期データ</td></tr>
+<tr><td><code>$8480-$84FF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$8500</code></td><td><code>u8[8][16]</code></td><td>(エクスポート) <a href="https://taotao54321.github.io/LoghResource/ram/#enemy-struct-b">敵艦隊構造体B</a>配列初期データ</td></tr>
+<tr><td><code>$8580-$85FF</code></td><td></td><td>(未使用)</td></tr>
+<tr><td><code>$8600</code></td><td><code>ptr[256]</code></td><td>(エクスポート) スクリプトポインタテーブル (先頭 106 要素のみが有効。残りは無効エントリ)</td></tr>
+<tr><td><code>$8800</code></td><td><code>u8[47]</code></td><td>スクリプト 0</td></tr>
+<tr><td><code>$882F</code></td><td><code>u8[19]</code></td><td>スクリプト 1</td></tr>
+<tr><td><code>$8842</code></td><td><code>u8[46]</code></td><td>スクリプト 2</td></tr>
+<tr><td><code>$8870</code></td><td><code>u8[93]</code></td><td>スクリプト 3</td></tr>
+<tr><td><code>$88CD</code></td><td><code>u8[18]</code></td><td>スクリプト 4</td></tr>
+<tr><td><code>$88DF</code></td><td><code>u8[44]</code></td><td>スクリプト 5</td></tr>
+<tr><td><code>$890B</code></td><td><code>u8[53]</code></td><td>スクリプト 6</td></tr>
+<tr><td><code>$8940</code></td><td><code>u8[45]</code></td><td>スクリプト 7</td></tr>
+<tr><td><code>$896D</code></td><td><code>u8[57]</code></td><td>スクリプト 8</td></tr>
+<tr><td><code>$89A6</code></td><td><code>u8[37]</code></td><td>スクリプト 9</td></tr>
+<tr><td><code>$89CB</code></td><td><code>u8[46]</code></td><td>スクリプト 10</td></tr>
+<tr><td><code>$89F9</code></td><td><code>u8[54]</code></td><td>スクリプト 11</td></tr>
+<tr><td><code>$8A2F</code></td><td><code>u8[74]</code></td><td>スクリプト 12</td></tr>
+<tr><td><code>$8A79</code></td><td><code>u8[53]</code></td><td>スクリプト 13</td></tr>
+<tr><td><code>$8AAE</code></td><td><code>u8[72]</code></td><td>スクリプト 14</td></tr>
+<tr><td><code>$8AF6</code></td><td><code>u8[54]</code></td><td>スクリプト 15</td></tr>
+<tr><td><code>$8B2C</code></td><td><code>u8[65]</code></td><td>スクリプト 16</td></tr>
+<tr><td><code>$8B6D</code></td><td><code>u8[59]</code></td><td>スクリプト 17</td></tr>
+<tr><td><code>$8BA8</code></td><td><code>u8[44]</code></td><td>スクリプト 18</td></tr>
+<tr><td><code>$8BD4</code></td><td><code>u8[58]</code></td><td>スクリプト 19</td></tr>
+<tr><td><code>$8C0E</code></td><td><code>u8[86]</code></td><td>スクリプト 20</td></tr>
+<tr><td><code>$8C64</code></td><td><code>u8[69]</code></td><td>スクリプト 21</td></tr>
+<tr><td><code>$8CA9</code></td><td><code>u8[53]</code></td><td>スクリプト 22</td></tr>
+<tr><td><code>$8CDE</code></td><td><code>u8[68]</code></td><td>スクリプト 23</td></tr>
+<tr><td><code>$8D22</code></td><td><code>u8[70]</code></td><td>スクリプト 24</td></tr>
+<tr><td><code>$8D68</code></td><td><code>u8[65]</code></td><td>スクリプト 25</td></tr>
+<tr><td><code>$8DA9</code></td><td><code>u8[35]</code></td><td>スクリプト 26</td></tr>
+<tr><td><code>$8DCC</code></td><td><code>u8[51]</code></td><td>スクリプト 27</td></tr>
+<tr><td><code>$8DFF</code></td><td><code>u8[145]</code></td><td>スクリプト 28</td></tr>
+<tr><td><code>$8E90</code></td><td><code>u8[62]</code></td><td>スクリプト 29</td></tr>
+<tr><td><code>$8ECE</code></td><td><code>u8[38]</code></td><td>スクリプト 30</td></tr>
+<tr><td><code>$8EF4</code></td><td><code>u8[50]</code></td><td>スクリプト 31</td></tr>
+<tr><td><code>$8F26</code></td><td><code>u8[30]</code></td><td>スクリプト 32</td></tr>
+<tr><td><code>$8F44</code></td><td><code>u8[33]</code></td><td>スクリプト 33</td></tr>
+<tr><td><code>$8F65</code></td><td><code>u8[20]</code></td><td>スクリプト 34</td></tr>
+<tr><td><code>$8F79</code></td><td><code>u8[51]</code></td><td>スクリプト 35</td></tr>
+<tr><td><code>$8FAC</code></td><td><code>u8[59]</code></td><td>スクリプト 36</td></tr>
+<tr><td><code>$8FE7</code></td><td><code>u8[70]</code></td><td>スクリプト 37</td></tr>
+<tr><td><code>$902D</code></td><td><code>u8[69]</code></td><td>スクリプト 38</td></tr>
+<tr><td><code>$9072</code></td><td><code>u8[0]</code></td><td>スクリプト 39</td></tr>
+<tr><td><code>$9072</code></td><td><code>u8[149]</code></td><td>スクリプト 40</td></tr>
+<tr><td><code>$9107</code></td><td><code>u8[83]</code></td><td>スクリプト 41</td></tr>
+<tr><td><code>$915A</code></td><td><code>u8[49]</code></td><td>スクリプト 42</td></tr>
+<tr><td><code>$918B</code></td><td><code>u8[0]</code></td><td>スクリプト 43</td></tr>
+<tr><td><code>$918B</code></td><td><code>u8[22]</code></td><td>スクリプト 44</td></tr>
+<tr><td><code>$91A1</code></td><td><code>u8[23]</code></td><td>スクリプト 45</td></tr>
+<tr><td><code>$91B8</code></td><td><code>u8[58]</code></td><td>スクリプト 46</td></tr>
+<tr><td><code>$91F2</code></td><td><code>u8[57]</code></td><td>スクリプト 47</td></tr>
+<tr><td><code>$922B</code></td><td><code>u8[80]</code></td><td>スクリプト 48</td></tr>
+<tr><td><code>$927B</code></td><td><code>u8[56]</code></td><td>スクリプト 49</td></tr>
+<tr><td><code>$92B3</code></td><td><code>u8[66]</code></td><td>スクリプト 50</td></tr>
+<tr><td><code>$92F5</code></td><td><code>u8[44]</code></td><td>スクリプト 51</td></tr>
+<tr><td><code>$9321</code></td><td><code>u8[38]</code></td><td>スクリプト 52</td></tr>
+<tr><td><code>$9347</code></td><td><code>u8[7]</code></td><td>スクリプト 53</td></tr>
+<tr><td><code>$934E</code></td><td><code>u8[54]</code></td><td>スクリプト 54</td></tr>
+<tr><td><code>$9384</code></td><td><code>u8[128]</code></td><td>スクリプト 55</td></tr>
+<tr><td><code>$9404</code></td><td><code>u8[62]</code></td><td>スクリプト 56</td></tr>
+<tr><td><code>$9442</code></td><td><code>u8[46]</code></td><td>スクリプト 57</td></tr>
+<tr><td><code>$9470</code></td><td><code>u8[35]</code></td><td>スクリプト 58</td></tr>
+<tr><td><code>$9493</code></td><td><code>u8[63]</code></td><td>スクリプト 59</td></tr>
+<tr><td><code>$94D2</code></td><td><code>u8[39]</code></td><td>スクリプト 60</td></tr>
+<tr><td><code>$94F9</code></td><td><code>u8[32]</code></td><td>スクリプト 61</td></tr>
+<tr><td><code>$9519</code></td><td><code>u8[43]</code></td><td>スクリプト 62</td></tr>
+<tr><td><code>$9544</code></td><td><code>u8[45]</code></td><td>スクリプト 63</td></tr>
+<tr><td><code>$9571</code></td><td><code>u8[29]</code></td><td>スクリプト 64</td></tr>
+<tr><td><code>$958E</code></td><td><code>u8[46]</code></td><td>スクリプト 65</td></tr>
+<tr><td><code>$95BC</code></td><td><code>u8[46]</code></td><td>スクリプト 66</td></tr>
+<tr><td><code>$95EA</code></td><td><code>u8[46]</code></td><td>スクリプト 67</td></tr>
+<tr><td><code>$9618</code></td><td><code>u8[46]</code></td><td>スクリプト 68</td></tr>
+<tr><td><code>$9646</code></td><td><code>u8[93]</code></td><td>スクリプト 69</td></tr>
+<tr><td><code>$96A3</code></td><td><code>u8[451]</code></td><td>スクリプト 70</td></tr>
+<tr><td><code>$9866</code></td><td><code>u8[46]</code></td><td>スクリプト 71</td></tr>
+<tr><td><code>$9894</code></td><td><code>u8[46]</code></td><td>スクリプト 72</td></tr>
+<tr><td><code>$98C2</code></td><td><code>u8[40]</code></td><td>スクリプト 73</td></tr>
+<tr><td><code>$98EA</code></td><td><code>u8[95]</code></td><td>スクリプト 74</td></tr>
+<tr><td><code>$9949</code></td><td><code>u8[39]</code></td><td>スクリプト 75</td></tr>
+<tr><td><code>$9970</code></td><td><code>u8[71]</code></td><td>スクリプト 76</td></tr>
+<tr><td><code>$99B7</code></td><td><code>u8[68]</code></td><td>スクリプト 77</td></tr>
+<tr><td><code>$99FB</code></td><td><code>u8[59]</code></td><td>スクリプト 78</td></tr>
+<tr><td><code>$9A36</code></td><td><code>u8[70]</code></td><td>スクリプト 79</td></tr>
+<tr><td><code>$9A7C</code></td><td><code>u8[68]</code></td><td>スクリプト 80</td></tr>
+<tr><td><code>$9AC0</code></td><td><code>u8[67]</code></td><td>スクリプト 81</td></tr>
+<tr><td><code>$9B03</code></td><td><code>u8[61]</code></td><td>スクリプト 82</td></tr>
+<tr><td><code>$9B40</code></td><td><code>u8[67]</code></td><td>スクリプト 83</td></tr>
+<tr><td><code>$9B83</code></td><td><code>u8[68]</code></td><td>スクリプト 84</td></tr>
+<tr><td><code>$9BC7</code></td><td><code>u8[67]</code></td><td>スクリプト 85</td></tr>
+<tr><td><code>$9C0A</code></td><td><code>u8[64]</code></td><td>スクリプト 86</td></tr>
+<tr><td><code>$9C4A</code></td><td><code>u8[193]</code></td><td>スクリプト 87</td></tr>
+<tr><td><code>$9D0B</code></td><td><code>u8[72]</code></td><td>スクリプト 88</td></tr>
+<tr><td><code>$9D53</code></td><td><code>u8[54]</code></td><td>スクリプト 89</td></tr>
+<tr><td><code>$9D89</code></td><td><code>u8[22]</code></td><td>スクリプト 90</td></tr>
+<tr><td><code>$9D9F</code></td><td><code>u8[42]</code></td><td>スクリプト 91</td></tr>
+<tr><td><code>$9DC9</code></td><td><code>u8[41]</code></td><td>スクリプト 92</td></tr>
+<tr><td><code>$9DF2</code></td><td><code>u8[50]</code></td><td>スクリプト 93</td></tr>
+<tr><td><code>$9E24</code></td><td><code>u8[50]</code></td><td>スクリプト 94</td></tr>
+<tr><td><code>$9E56</code></td><td><code>u8[44]</code></td><td>スクリプト 95</td></tr>
+<tr><td><code>$9E82</code></td><td><code>u8[57]</code></td><td>スクリプト 96</td></tr>
+<tr><td><code>$9EBB</code></td><td><code>u8[117]</code></td><td>スクリプト 97</td></tr>
+<tr><td><code>$9F30</code></td><td><code>u8[97]</code></td><td>スクリプト 98</td></tr>
+<tr><td><code>$9F91</code></td><td><code>u8[42]</code></td><td>スクリプト 99</td></tr>
+<tr><td><code>$9FBB</code></td><td><code>u8[62]</code></td><td>スクリプト 100</td></tr>
+<tr><td><code>$9FF9</code></td><td><code>u8[82]</code></td><td>スクリプト 101</td></tr>
+<tr><td><code>$A04B</code></td><td><code>u8[49]</code></td><td>スクリプト 102</td></tr>
+<tr><td><code>$A07C</code></td><td><code>u8[39]</code></td><td>スクリプト 103</td></tr>
+<tr><td><code>$A0A3</code></td><td><code>u8[66]</code></td><td>スクリプト 104</td></tr>
+<tr><td><code>$A0E5</code></td><td><code>u8[48]</code></td><td>スクリプト 105</td></tr>
+<tr><td><code>$A115</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A353</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A590</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$A7CE</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$AA0A</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$AC49</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$AE88</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B0C4</code></td><td><code>code</code></td><td>(エクスポート)</td></tr>
+<tr><td><code>$B0DC</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B0EB</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B104</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B108</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B10C</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B110</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B114</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B118</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B11C</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B120</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B12C</code></td><td><code>code</code></td><td></td></tr>
+<tr><td><code>$B146</code></td><td><code>u8[32]</code></td><td></td></tr>
+<tr><td><code>$B166-$BFFF</code></td><td></td><td>(未使用)</td></tr>
+</tbody></table>
+
+
+
+</body>
+</html>
